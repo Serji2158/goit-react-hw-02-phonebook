@@ -16,6 +16,14 @@ code {
   border: 1px solid;
   margin: 0 auto;
   border-radius: 10px;
-  width: 350px;
+  width: 450px;
   background-color: rgb(116, 186, 243);
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  margin-left: 20px;
 }

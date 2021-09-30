@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { v4 as uuidv4 } from "uuid";
 import ContactList from "./contactList/ContactList";
-import Filter from "./contactList/filter/Filter";
+import Filter from "./filter/Filter";
 import ContactForm from "./contactForm/ContactForm";
 
 class App extends Component {
@@ -38,15 +38,18 @@ class App extends Component {
   };
 
   getVisibleContacts = () => {
-    const normolizedFilter = this.state.filter.toLowerCase();
-    return this.state.contacts.filter((contact) =>
-      contact.name.toLowerCase().includes(normolizedFilter)
-    );
+    const { filter, contacts } = this.state;
+    const normolizedFilter = filter.toLowerCase();
+
+    return normolizedFilter
+      ? contacts.filter((contact) =>
+          contact.name.toLowerCase().includes(normolizedFilter)
+        )
+      : contacts;
   };
 
   render() {
-    //   const {name, value, filter} = this.state;
-
+    const filteredContacts = this.getVisibleContacts();
     return (
       <>
         <div>
@@ -61,7 +64,7 @@ class App extends Component {
             onChange={this.onHandleChangeFilter}
           />
           <ContactList
-            contacts={this.state.contacts}
+            contacts={filteredContacts}
             deletContact={this.deletContact}
           />
         </div>
