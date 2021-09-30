@@ -62,8 +62,8 @@ class ContactForm extends Component {
 }
 
 ContactForm.propTypes = {
-  onHandleChange: PropTypes.func,
-  onHandleSubmit: PropTypes.func,
+  onHandleChange: PropTypes.func.isRequired,
+  onHandleSubmit: PropTypes.func.isRequired,
 };
 
 export default ContactForm;

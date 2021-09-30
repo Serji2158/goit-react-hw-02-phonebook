@@ -49,20 +49,22 @@ class App extends Component {
 
     return (
       <>
-        <h1>Phonebook</h1>
-        <ContactForm
-          isExistContact={this.isExistContact}
-          addNewContact={this.addNewContact}
-        />
-        <h2>Contacts</h2>
-        <Filter
-          value={this.state.filter}
-          onChange={this.onHandleChangeFilter}
-        />
-        <ContactList
-          contacts={this.state.contacts}
-          deletContact={this.deletContact}
-        />
+        <div>
+          <h1>Phonebook</h1>
+          <ContactForm
+            isExistContact={this.isExistContact}
+            addNewContact={this.addNewContact}
+          />
+          <h2>Contacts</h2>
+          <Filter
+            value={this.state.filter}
+            onChange={this.onHandleChangeFilter}
+          />
+          <ContactList
+            contacts={this.state.contacts}
+            deletContact={this.deletContact}
+          />
+        </div>
       </>
     );
   }

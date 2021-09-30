@@ -23,8 +23,8 @@ const ContactList = ({ contacts, deletContact }) => {
 };
 
 ContactList.propTypes = {
-  contacts: PropTypes.func,
-  deletContact: PropTypes.func,
+  contacts: PropTypes.object.isRequired,
+  deletContact: PropTypes.func.isRequired,
 };
 
 export default ContactList;

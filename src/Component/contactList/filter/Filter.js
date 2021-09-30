@@ -5,7 +5,7 @@ const Filter = ({ value, onChange }) => {
   return (
     <>
       <label>
-        Find contacts by name
+        <p>Find contacts by name</p>
         <input
           type="text"
           name="filter"
@@ -21,8 +21,8 @@ const Filter = ({ value, onChange }) => {
 };
 
 Filter.propTypes = {
-  value: PropTypes.string,
-  deletContact: PropTypes.func,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default Filter;
